@@ -96,17 +96,17 @@ class MaxHeap {
 
 let ptree = new MaxHeap()
 
-let queue = document.querySelector('.queue')
-let proc = document.querySelector('.washing')
-let done = document.querySelector('.done')
+let queue = document.getElementsByClassName('queue')[0]
+let proc = document.getElementsByClassName('washing')[0]
+let done = document.getElementsByClassName('done')[0]
 
-let name = document.querySelector('#name')
-let pno = document.querySelector('#email')
-let cno = document.querySelector('#clothes')
-let premium = document.querySelector('#premium')
+let name = document.getElementById('name')
+let pno = document.getElementById('email')
+let cno = document.getElementById('clothes')
+let premium = document.getElementById('premium')
 
-let addButton = document.querySelector('.add')
-
+let addButton = document.getElementsByClassName('add')[0]
+console.log(queue, proc, done);
 let priorities = new Set()
 
 function removeFromDone(event) {
