@@ -106,7 +106,7 @@ let cno = document.getElementById('clothes')
 let premium = document.getElementById('premium')
 
 let addButton = document.getElementsByClassName('add')[0]
-console.log(queue, proc, done);
+
 let priorities = new Set()
 
 function removeFromDone(event) {
