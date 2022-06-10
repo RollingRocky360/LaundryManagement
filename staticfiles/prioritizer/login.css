@@ -18,6 +18,9 @@ body {
     background-position: 5% 40%;
 
     overflow: hidden;
+}
+
+.container-animation {
     animation: slide-background-in 0.67s ease-out;
 }
 
@@ -35,6 +38,10 @@ body {
     justify-content: center;
     align-items: center;
 
+    position: relative;
+}
+
+.inner-animation {
     animation: slide-in-left ease-out .6s;
 }
 
@@ -49,7 +56,7 @@ form {
 }
 
 input {
-    alL:unset;
+    alL: unset;
     position: relative;
     font-size: 100%;
     border: none;
@@ -79,7 +86,7 @@ input:focus::placeholder {
     color: transparent;
 }
 
-a {
+#submit {
     text-decoration: none;
 
     margin: 1rem 0;
@@ -99,11 +106,11 @@ a {
     transition: .01s
 }
 
-a:hover {
+#submit:hover {
     cursor: pointer;
 }
 
-a:active {
+#submit:active {
     width: 34%;
     box-shadow: 0 0 4px 1px rgba(80, 80, 80, .1);
     margin: calc(1rem + (0.5%*1/5)) 0;
@@ -120,6 +127,25 @@ p {
     width: 40%;
 }
 
+
+.wrong {
+    box-sizing: border-box;
+    animation: red-border-pulse 2s ease-out;
+}
+
+@keyframes red-border-pulse {
+    from {
+        outline: 2px solid rgb(255, 147, 147, 1);
+    }
+
+    20% {
+        outline: 2px solid rgb(255, 147, 147, 1);
+    }
+
+    to {
+        outline: 2px solid rgba(255, 147, 147, 0);
+    }
+}
 
 @keyframes slide-in-left {
     from {
