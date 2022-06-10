@@ -11,12 +11,19 @@
     </head>
 
     <body>
-        <div class='container'>
-            <div class='inner'>
-                <form action='' autocomplete="off">
-                    <input type="text" placeholder="Username" name="username">
-                    <input type="password" placeholder="Password" name="password">
-                    <a href="/home" id="submit"><p>Login</p></a>
+        <div class='container {{ containerAnimation }}'>
+            <div class='inner {{ innerAnimation }}'>
+                <form action='/home' autocomplete="off" method="POST">
+                    {% csrf_token %}
+                    {% if loginerror is None %}
+                        <input type="text" placeholder="Username" name="username">
+                        <input type="password" placeholder="Password" name="password">
+                    {% else %}
+                        <p style="color: rgb(255, 147, 147); font-size: 80%; position: absolute; top: 10%;">Incorrect Username or Password</p>
+                        <input class='wrong' type="text" placeholder="Username" name="username">
+                        <input class='wrong' type="password" placeholder="Password" name="password">
+                    {% endif %}
+                    <button id="submit">Login</button>
                 </form>
             </div>
         </div>
